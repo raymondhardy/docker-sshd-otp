@@ -1,0 +1,10 @@
+version: '2.0'
+services:
+  sshd:
+    image: rhard/docker-sshd-otp:1.0 
+    container_name: sshd
+    volumes:
+      -  data/.google_authenticator:/.google_authenticator
+      -  data/id_rsa.pub:/home/user/.ssh/authorized_keys 
+    ports:
+      - "2222:22"
