@@ -7,6 +7,7 @@ RUN sed -i '2i auth [success=done new_authtok_reqd=done default=die] pam_google_
 RUN sed -i 's/ChallengeResponseAuthentication no/ChallengeResponseAuthentication yes\nAuthenticationMethods publickey,keyboard-interactive/' /etc/ssh/sshd_config
 RUN sed -i 's/PermitRootLogin without-password/PermitRootLogin no/' /etc/ssh/sshd_config
 RUN useradd user 
+RUN sudo usermod -s /bin/bash user
 
 # Set up directories
 RUN mkdir -p /var/run/sshd /var/log/supervisor /var/run/fail2ban /home/user/.ssh
