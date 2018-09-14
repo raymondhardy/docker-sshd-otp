@@ -5,8 +5,10 @@ This docker container bundles up sshd, fail2ban and google-authenticator TOTP in
 ## Start command
 docker run -v data/.google_authenticator:/.google_authenticator -v data/id_rsa.pub:/home/user/.ssh/authorized_keys -p 2222:22 skinnys/docker-sshd-otp
 
-Docker compose will mount your .google_authenticator and id_rsa.pub from within the data dir
+
 ## Docker Compose example ##
+Docker compose will mount your .google_authenticator and id_rsa.pub from within the data dir
+```
 version: '2.0'
 services:
   sshd:
