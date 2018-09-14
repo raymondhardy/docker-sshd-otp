@@ -1,7 +1,7 @@
 version: '2.0'
 services:
   sshd:
-    image: rhard/docker-sshd-otp:1.0 
+    image: skinnys/docker-sshd-otp
     container_name: sshd
     volumes:
       -  data/.google_authenticator:/.google_authenticator
